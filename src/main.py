@@ -23,7 +23,6 @@ def export_to_json(path):
     network_info                           = network.get_network_info()
     gpu_info                               = gpu.get_gpu_info()
     memory_info                            = memory.get_memory_info()
-    # filled_slots = memory.get_memory_info()
 
     software_info = {
         "Operating System": operating_system_info
