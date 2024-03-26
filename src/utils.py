@@ -18,7 +18,7 @@ def get_network_wmi_instance(wmi_class):
 # [[ Helper functions ]]
 ###############################################################################
 def convert_bytes_to_megabytes(b):
-    return int(b) / 1073741824
+    return int(b) / 1048576
 
 def convert_bytes_to_gigabytes(b):
     return int(b) / 1073741824
