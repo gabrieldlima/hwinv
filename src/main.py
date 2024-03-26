@@ -22,6 +22,7 @@ def export_to_json(path):
     disk_info                              = disk.get_disk_info()
     network_info                           = network.get_network_info()
     gpu_info                               = gpu.get_gpu_info()
+    memory_info                            = memory.get_memory_info()
     # filled_slots = memory.get_memory_info()
 
     software_info = {
@@ -30,9 +31,7 @@ def export_to_json(path):
     hardware_info = {
         "Computer":    computer_info,
         "Processor":   cpu_info,
-        # "Memory":      filled_slots,
-        # "Total Slots": total_slots,
-        # "Empty Slots": empty_slots,
+        "Memory":      memory_info,
         "Disks":       disk_info,
         "Network":     network_info,
         "Graphics":    gpu_info,
@@ -48,8 +47,7 @@ def export_to_json(path):
 # [[ Main function ]]
 ###############################################################################
 def main():
-    # directory_path = fr"Z:\TI\{socket.gethostname()}"
-    directory_path = fr"output"
+    directory_path = fr"Z:\TI\{socket.gethostname()}"
     if not os.path.exists(directory_path):
         os.makedirs(directory_path)
 
