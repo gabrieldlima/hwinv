@@ -34,3 +34,15 @@ def convert_date_format(date_string):
     formatted_date = f"{day}/{month}/{year}, {hour}:{minute}:{second}"
     
     return formatted_date
+
+def check_string(string):
+    exclude = [
+        "VirtualBox",
+        "Hyper",
+        "OpenVPN",
+        "TAP",
+        "Microsoft",
+        "Win",
+        "WAN"
+    ]
+    return any(string.startswith(excluded) for excluded in exclude)
