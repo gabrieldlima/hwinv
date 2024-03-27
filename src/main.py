@@ -34,14 +34,14 @@ def export_to_json(path):
         "COMPUTER":    computer_info,
         "PROCESSOR":   cpu_info,
         "MEMORY":      memory_info,
+        "GRAPHICS":    gpu_info,
         "DISK":        disk_info,
         "NETWORK":     network_info,
-        "GRAPHICS":    gpu_info,
     }
 
-    with open(fr"{path}\software.json", "w", encoding="utf-8") as json_file:
+    with open(fr"{path}\software_info.json", "w", encoding="utf-8") as json_file:
         json.dump(software_info, json_file, indent=4)
-    with open(fr"{path}\hardware.json", "w", encoding="utf-8") as json_file:
+    with open(fr"{path}\hardware_info.json", "w", encoding="utf-8") as json_file:
         json.dump(hardware_info, json_file, indent=4)
 
 
@@ -49,7 +49,7 @@ def export_to_json(path):
 # [[ Main function ]]
 ###############################################################################
 def main():
-    directory_path = fr"Z:\TI\{socket.gethostname()}"
+    directory_path = fr"Z:\TI\INVENTARIO\{socket.gethostname()}"
     if not os.path.exists(directory_path):
         os.makedirs(directory_path)
 
