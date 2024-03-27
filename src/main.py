@@ -10,6 +10,7 @@ from modules import get_disk_info as disk
 from modules import get_network_info as network
 from modules import get_computer_info as computer
 from modules import get_os_info as operatingsystem
+from modules import get_username_info as username
 
 
 ###############################################################################
@@ -23,17 +24,19 @@ def export_to_json(path):
     network_info                           = network.get_network_info()
     gpu_info                               = gpu.get_gpu_info()
     memory_info                            = memory.get_memory_info()
+    username_info                          = username.get_username_info()
 
     software_info = {
-        "Operating System": operating_system_info
+        "OS":   operating_system_info,
+        "USER": username_info,
     }
     hardware_info = {
-        "Computer":    computer_info,
-        "Processor":   cpu_info,
-        "Memory":      memory_info,
-        "Disks":       disk_info,
-        "Network":     network_info,
-        "Graphics":    gpu_info,
+        "COMPUTER":    computer_info,
+        "PROCESSOR":   cpu_info,
+        "MEMORY":      memory_info,
+        "DISK":        disk_info,
+        "NETWORK":     network_info,
+        "GRAPHICS":    gpu_info,
     }
 
     with open(fr"{path}\software.json", "w", encoding="utf-8") as json_file:
