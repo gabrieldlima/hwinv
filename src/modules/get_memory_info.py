@@ -34,10 +34,14 @@ def get_memory_info():
                         slot_information[properties_map[prop]] = f"DDR3"
                     elif value == 25:
                         slot_information[properties_map[prop]] = f"DDR3L"
-                    elif value == 26:
-                        slot_information[properties_map[prop]] = f"DDR4"
                     else:
-                        slot_information[properties_map[prop]] = value
+                        speed = getattr(mem, "Speed", None)
+                        if speed >= 2133 and speed <= 3600:
+                            slot_information[properties_map[prop]] = f"DDR4"
+                        elif speed > 3600:
+                            slot_information[properties_map[prop]] = f"DDR5"
+                        else:
+                            slot_information[properties_map[prop]] = f"Unknown"
                 elif prop == "FormFactor":
                     # DIMM (3), SODIMM (12)
                     if value == 8:
