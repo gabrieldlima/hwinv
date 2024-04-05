@@ -17,7 +17,8 @@ def get_network_info():
     for network in networks:
         network_information = {}
         description = getattr(network, "Description", None)
-        if not u.check_string(description):
+        mac = getattr(network, "MACAddress", None)
+        if not u.check_string(description) and mac is not None:
             for prop in properties_map:
                 value = getattr(network, prop, None)
                 if value is not None:
