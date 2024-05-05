@@ -1,7 +1,9 @@
-# Hardware information in Python (Windows only)
+# Hardware and Software Information Gathering Tool for Windows Systems
 
-This is a Python program for gathering hardware information from a system using the [Win32 Provider](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-provider). It provides details such as CPU, memory, disks, network information, and outputs the result in a JSON file.
-### hardware_info.json
+This Python program enables users to gather detailed hardware and software information from Windows systems using the [Win32 Provider](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-provider). It provides comprehensive data on CPU, memory, disks, network adapters, operating system details, and more, outputting the results in JSON format for easy analysis and processing.
+
+## Hardware Information
+The hardware_info.json file contains detailed hardware information, including details on the computer, processor, memory, graphics, disk storage, and network adapters.
 ```json
 {
     "COMPUTER": [
@@ -59,8 +61,8 @@ This is a Python program for gathering hardware information from a system using 
     ]
 }
 ```
-### software_info.json
----
+## Software information
+The software_info.json file provides insights into the operating system and user details, including OS name, architecture, version, disk usage, and user information.
 ```json
 {
     "OS": [
