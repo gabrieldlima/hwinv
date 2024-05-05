@@ -2,6 +2,14 @@
 
 This Python program enables users to gather detailed hardware and software information from Windows systems using the [Win32 Provider](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-provider). It provides comprehensive data on CPU, memory, disks, network adapters, operating system details, and more, outputting the results in JSON format for easy analysis and processing.
 
+## 🚀 Usage
+
+To run the program, open a cmd or powershell and navigate to the directory containing the `main.py` file. Then, use the following command:
+
+```plaintext
+python.exe main.py output_folder
+```
+
 ## 🖥️ Hardware Information
 The hardware_info.json file contains detailed hardware information, including details on the computer, processor, memory, graphics, disk storage, and network adapters.
 ```json
@@ -89,3 +97,4 @@ The software_info.json file provides insights into the operating system and user
     ]
 }
 ```
+
