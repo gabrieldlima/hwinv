@@ -1,21 +1,3 @@
-# Hardware Info (hwinfo)
+# Hardware information in Python (Windows only)
 
-This is a Windows-only Python tool for gathering hardware information from a system using the Win32 Provider and Windows Management Instrumentation (WMI). It provides details such as CPU, memory, disk, and network information.
-
-### Requirements
-[>= Python 3.12.0](https://www.python.org/)
-
----
-### Setup
-
-`# pip install -r requirements.txt`
-
----
-### Building
-
-`# pyinstaller --noconfirm --onefile --console --name "hwinfo" --clean --hide-console "hide-early" --add-data "src/modules;modules" --add-data "src/utils.py;." "src/main.py"`
-
----
-### Running
-
-`# .\dist\hwinfo.exe`
+This is a Python program for gathering hardware information from a system using the [Win32 Provider](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-provider). It provides details such as CPU, memory, disks, network information, and outputs the result in a JSON file.
